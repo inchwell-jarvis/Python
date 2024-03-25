@@ -7,3 +7,8 @@ print(name)
 # 多个数据拼接 按顺序进行插入
 name2 = '剩余金额：%s and %s' % (123, 321)
 print(name2)
+
+# 多个数据拼接 按顺序进行插入
+name3 = '剩余金额：%s and %d' % (123, 321)
+print(name3)
+
