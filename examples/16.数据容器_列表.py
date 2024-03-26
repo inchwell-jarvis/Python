@@ -71,3 +71,30 @@
 # mylist = ['123', '234', '345', '123', '123']
 # count = len(mylist)
 # print(count)
+
+def list_while_func():
+    # 使用 while 循环列表
+    list_num = ['123', '234', '456', '567', '678', '789']
+    index = 0
+    while index < len(list_num):
+        print(list_num[index])
+        index += 1
+
+
+# list_while_func()
+
+
+def list_for_func():
+    # 使用 for 循环列表
+    list_num = ['123', '234', '456', '567', '678', '789']
+    for item in list_num:
+        print(item)
+
+
+# list_for_func()
+
+# 练习 从列表中取出偶数
+list_nums = range(1, 10)
+for item2 in list_nums:
+    if item2 % 2 == 0:
+        print(item2)
