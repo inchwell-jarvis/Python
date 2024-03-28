@@ -10,7 +10,7 @@ file_bp = Blueprint('file_bp', __name__)
 def index():
     # 获取请求参数
     # filename = request.args.get('filename')
-    # file_base64 = request.args.get('file_base64')
+    # file_base64 = request.args.get('file_base64')  file_base64不能携带头部
     print(request.form)
     # 获取 POST 请求的参数
     filename = request.form.get('filename')

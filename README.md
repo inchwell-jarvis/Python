@@ -5,6 +5,7 @@
 ## 项目简介
 
 该项目包含了一系列的学习资源、示例代码和练习，涵盖了 Python 的各个方面，包括但不限于：
+
 - 基本语法
 - 数据类型
 - 控制流程
@@ -23,7 +24,6 @@
 - `exercises/` 目录：包含了练习题目，帮助你巩固所学知识。
 - `tutorials/` 目录：包含了针对特定主题的教程和说明文档，帮助你深入理解 Python 的某些方面。
 
-
 ## python 版本
 
 - 版本: python-3.12.2
@@ -33,14 +33,16 @@
 ## flask 框架
 
 - 安装 `pip install Flask`
+- 清华镜像 `pip install -i https://pypi.tuna.tsinghua.edu.cn/simple Flask`
 - 中文文档 https://dormousehole.readthedocs.io/en/latest/index.html
 
 ## pyinstaller 打包工具
 
 - 安装 PyInstaller: `pip install pyinstaller`
+- 清华镜像 `pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pyinstaller`
 - 使用 PyInstaller 打包 Flask 应用: `pyinstaller app.py`
-  - 其中 app.py 是启动你的 Flask 应用的 Python 脚本。PyInstaller 会分析这个脚本以及其导入的所有模块，并创建一个包含所有必要文件的分发包。
+    - 其中 app.py 是启动你的 Flask 应用的 Python 脚本。PyInstaller 会分析这个脚本以及其导入的所有模块，并创建一个包含所有必要文件的分发包。
 
 ## pip install flask-cors 跨域请求
-  
-  - 
+
+- 安装   `pip install -i https://pypi.tuna.tsinghua.edu.cn/simple flask-cors`
