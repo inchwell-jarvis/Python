@@ -1,10 +1,16 @@
-from flask import Flask, request
+from flask import Flask
+from flask_cors import CORS
+
 from routers.index import index_bp
+from routers.file import file_bp
 
 app = Flask(__name__)
+CORS(app)
 
-# 注册蓝图  index
+# 主页
 app.register_blueprint(index_bp, url_prefix='/index_bp')
+# 操作文件
+app.register_blueprint(file_bp, url_prefix='/file_bp')
 
 
 # 首先我们导入了 Flask 类。该类的实例将会成为我们的 WSGI 应用。
@@ -22,7 +28,7 @@ def catch_all(path): return '不存在的路径'
 
 #
 if __name__ == '__main__':
-    app.run('0.0.0.0', 8888)
+    app.run('0.0.0.0', 8880)
 
 # request.method: 获取请求方法，例如 'GET'、'POST' 等。
 # request.args: 获取查询参数，返回一个字典。

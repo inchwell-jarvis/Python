@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image and Call API</title>
+</head>
+<body>
+<input type="file" id="fileInput" accept="image/*" onchange="handleFileSelect(event)">
+<button onclick="uploadImage()">Upload Image and Call API</button>
+<script>
+    function handleFileSelect(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const base64String = event.target.result;
+            sessionStorage.setItem('base64Image', base64String); // 保存 base64 编码到 sessionStorage 中
+        };
+        reader.readAsDataURL(file);
+    }
+
+    function uploadImage() {
+        const base64String = sessionStorage.getItem('base64Image');
+        if (!base64String) {
+            console.error('No image selected');
+            return;
+        }
+
+        // 调用接口的 URL
+        const apiUrl = 'http://127.0.0.1:8880/file_bp/write';
+
+        // 构造请求体
+        const requestBody = {
+            filename:'123.jpg',
+            file_base64: base64String
+        };
+
+        // 发起 POST 请求
+        fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestBody)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('API response:', data);
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error.message);
+        });
+    }
+</script>
+</body>
+</html>
