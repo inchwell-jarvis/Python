@@ -43,6 +43,22 @@
 - 使用 PyInstaller 打包 Flask 应用: `pyinstaller app.py`
     - 其中 app.py 是启动你的 Flask 应用的 Python 脚本。PyInstaller 会分析这个脚本以及其导入的所有模块，并创建一个包含所有必要文件的分发包。
 
+
+- 语法
+
+| 参数                                  | 解释                                  |
+|-------------------------------------|-------------------------------------|
+| -F                                  | 所有依赖项打包到单一可执行文件                     |
+| -w                                  | 使用 Windows 子系统，不显示命令行窗口（仅限 Windows） |
+| -c                                  | 创建控制台应用程序，显示命令行窗口（仅限 Windows）       |
+| -n <name>                           | 指定生成的可执行文件的名称                       |
+| -i <icon.ico>                       | 指定生成的可执行文件的图标文件                     |
+| --add-data <SRC;DEST or SRC:DEST>   | 添加额外的文件或目录到可执行文件中                   |
+| --add-binary <SRC;DEST or SRC:DEST> | 添加二进制文件到可执行文件中                      |
+| -p <path>                           | 添加搜索路径，查找依赖项                        |
+| --hidden-import <module>            | 强制导入指定的模块                           |
+| --additional-hooks-dir <path>       | 添加额外的钩子目录                           |
+
 ## pip install flask-cors 跨域请求
 
 - 安装   `pip install -i https://pypi.tuna.tsinghua.edu.cn/simple flask-cors`
