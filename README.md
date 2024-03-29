@@ -62,3 +62,9 @@
 ## pip install flask-cors 跨域请求
 
 - 安装   `pip install -i https://pypi.tuna.tsinghua.edu.cn/simple flask-cors`
+
+## 使用 Waitress 在 Windows 上运行 Flask 应用
+
+- 安装 `pip install waitress`
+- 运行 `waitress-serve --listen=*:8880 app:app`
+- 暂时不用

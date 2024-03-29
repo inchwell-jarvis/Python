@@ -4,7 +4,10 @@ from flask_cors import CORS
 from routers.index import index_bp
 from routers.file import file_bp
 
+# 创建 Flask 应用
 app = Flask(__name__)
+
+#
 CORS(app)
 
 # 主页
@@ -29,10 +32,11 @@ def catch_all(path): return '不存在的路径'
 #
 if __name__ == '__main__':
     app.run('0.0.0.0', 8880)
+    # app.run()
 
 # request.method: 获取请求方法，例如 'GET'、'POST' 等。
-# request.args: 获取查询参数，返回一个字典。
-# request.form: 获取表单数据，返回一个字典。
-# request.json: 获取 JSON 数据，返回一个字典。
-# request.headers: 获取请求头，返回一个字典。
+# request.args: 获取查询参数，返回字典。
+# request.form: 获取表单数据，返回字典。
+# request.json: 获取 JSON 数据，返回字典。
+# request.headers: 获取请求头，返回字典。
 # request.remote_addr: 获取客户端的 IP 地址

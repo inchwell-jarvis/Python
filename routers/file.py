@@ -12,13 +12,13 @@ def index():
     # filename = request.args.get('filename')
     # file_base64 = request.args.get('file_base64')  file_base64不能携带头部
 
-    print(request.form)
+    # print(request.form)
     # 获取 POST 请求的参数
     filename = request.form.get('filename')
     file_base64 = request.form.get('file_base64')
 
-    print(filename)
-    print(file_base64)
+    # print(filename)
+    # print(file_base64)
 
     # 验证参数
     if not (filename and file_base64):
@@ -64,4 +64,6 @@ def index():
         return jsonify({'error': f'文件写入失败: {str(e)}'})
 
     # 返回文件路径
-    return jsonify({'file_path': 'develop/files/' + filename})
+    file_url = 'develop/files/' + filename
+    print(file_url)
+    return jsonify({'file_path': file_url})
